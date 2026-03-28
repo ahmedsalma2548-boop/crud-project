@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>CRUD</title>
+</head>
+
+<body class="bg-gray-800 m-0 p-0 text-white mt-[40px] font-serif">
+
+<div class="contanier w-[80%] mx-auto">
+
+    <div class="head text-center my-[10px]">
+        <h1 class="text-3xl font-bold mb-2">جمله ماركت</h1>
+        <p class="text-gray-500 text-base uppercase">Supermarket – Wholesale Prices</p>
+    </div>
+
+    <div dir="rtl" class="inputs">
+        <input id="title" placeholder="اسم المنتج" class="w-full h-[35px] my-2 px-2 bg-[#111] rounded border border-gray-600 focus:border-purple-500 outline-none">
+
+        <div class="price flex gap-2 flex-wrap">
+            <input id="price" type="number" placeholder="السعر" class="w-[23%] h-[35px] my-2 px-2 bg-[#111] rounded border border-gray-600 focus:border-purple-500 outline-none">
+            <input id="taxes" type="number" placeholder="الضرائب" class="w-[23%] h-[35px] my-2 px-2 bg-[#111] rounded border border-gray-600 focus:border-purple-500 outline-none">
+            <input id="ads" type="number" placeholder="الاعلانات" class="w-[23%] h-[35px] my-2 px-2 bg-[#111] rounded border border-gray-600 focus:border-purple-500 outline-none">
+            <input id="discount" type="number" placeholder="الخصم" class="w-[23%] h-[35px] my-2 px-2 bg-[#111] rounded border border-gray-600 focus:border-purple-500 outline-none">
+            <small class="total bg-red-500 px-2 py-1 rounded">المجموع</small>
+        </div>
+
+        <input id="count" type="number" placeholder="العدد" class="w-full h-[35px] my-2 px-2 bg-[#111] rounded border border-gray-600 focus:border-purple-500 outline-none">
+        <input id="category" placeholder="النوع" class="w-full h-[35px] my-2 px-2 bg-[#111] rounded border border-gray-600 focus:border-purple-500 outline-none">
+
+        <button class="cursor-pointer create w-full my-2 bg-purple-600 py-2 rounded-lg">انشاء</button>
+    </div>
+
+    <div class="outputs">
+
+        <input id="search" placeholder="بحث" oninput="searchData(this.value)"
+            class="w-full h-[35px] my-1 px-2 bg-[#111] rounded">
+
+        <div class="flex gap-2">
+            <button id="searchtitle" class="cursor-pointer w-1/2 bg-purple-600 py-2 rounded">بحث بالاسم</button>
+            <button id="searchcategory" class="cursor-pointer w-1/2 bg-purple-600 py-2 rounded">بحث بالنوع</button>
+        </div>
+
+        <div class="deletebutton"></div>
+        <div class="dlebto"></div>
+
+        <!-- ✅ TABLE للديسكتوب -->
+        <table class="hidden sm:table w-full text-center mt-3">
+            <tr>
+                <th>#</th>
+                <th>الاسم</th>
+                <th>السعر</th>
+                <th>الضرائب</th>
+                <th>الإعلانات</th>
+                <th>الخصم</th>
+                <th>المجموع</th>
+                <th>النوع</th>
+                <th>العدد</th>
+                <th>تحديث</th>
+                <th>مسح</th>
+            </tr>
+            <tbody id="tbody"></tbody>
+        </table>
+
+        <!-- ✅ CARDS للموبايل -->
+        <div id="cards"></div>
+
+    </div>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
